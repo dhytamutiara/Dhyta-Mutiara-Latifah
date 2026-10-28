@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhyta Mutiara Latifah | Personal Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#09090b',
+                            card: '#121215',
+                            border: '#27272a',
+                            accent: '#3f3f46',
+                            highlight: '#f4f4f5',
+                            muted: '#a1a1aa'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
+        }
+        /* Glow Background Effects */
+        .glow-effect {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-bg text-brand-highlight selection:bg-zinc-700 selection:text-white relative">
+
+    <!-- Background Atmospheric Lighting -->
+    <div class="glow-effect w-[500px] h-[500px] bg-zinc-400 -top-32 -left-32"></div>
+    <div class="glow-effect w-[400px] h-[400px] bg-zinc-600 top-1/2 -right-32"></div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-brand-bg/80 border-b border-brand-border/50">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+                Dhyta Mutiara L.
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-brand-muted">
+                <a href="#about" class="hover:text-white transition-colors duration-200">Tentang</a>
+                <a href="#experience" class="hover:text-white transition-colors duration-200">Pengalaman</a>
+                <a href="#skills" class="hover:text-white transition-colors duration-200">Keahlian</a>
+                <a href="#contact" class="hover:text-white transition-colors duration-200">Kontak</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <a href="#contact" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold tracking-wide text-black bg-white rounded-full hover:bg-zinc-200 transition-all duration-200 shadow-sm">
+                Hubungi Saya
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-btn" class="md:hidden text-brand-muted hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 py-4 flex flex-col space-y-4 text-sm text-brand-muted">
+            <a href="#about" class="mobile-link hover:text-white transition-colors">Tentang</a>
+            <a href="#experience" class="mobile-link hover:text-white transition-colors">Pengalaman</a>
+            <a href="#skills" class="mobile-link hover:text-white transition-colors">Keahlian</a>
+            <a href="#contact" class="mobile-link hover:text-white transition-colors">Kontak</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center justify-center pt-24 pb-16 px-6 relative">
+        <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            <!-- Badge Sub-title -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-brand-border text-xs text-zinc-400 mb-8">
+                <i class="fa-solid fa-compass text-zinc-400 text-xs"></i>
+                <span>[A Journey of Knowledge]</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Pengelolaan Data, Strategi Konten &amp; Administrasi Efektif.
+            </h1>
+
+            <!-- Subheading / Bio Intro -->
+            <p class="text-base sm:text-lg text-brand-muted max-w-2xl font-normal leading-relaxed mb-10">
+                Halo! Saya <span class="text-white font-semibold">Dhyta Mutiara Latifah</span>, Lulusan S1 Manajemen yang berfokus pada efisiensi administrasi, riset mendalam, komunikasi strategis, dan kreasi konten digital.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <a href="#contact" class="w-full sm:w-auto px-7 py-3.5 bg-white text-black font-semibold text-sm rounded-full hover:bg-zinc-200 transition-all duration-200 shadow-lg shadow-white/5 flex items-center justify-center gap-2">
+                    <span>Mulai Kolaborasi</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="#experience" class="w-full sm:w-auto px-7 py-3.5 bg-zinc-900 text-zinc-300 border border-brand-border font-medium text-sm rounded-full hover:bg-zinc-800 hover:text-white transition-all duration-200 flex items-center justify-center">
+                    Lihat Portofolio
+                </a>
+            </div>
+
+            <!-- Social Links / Quick Info -->
+            <div class="mt-16 flex items-center justify-center space-x-6 text-brand-muted">
+                <a href="https://linkedin.com/in/dhytamutiaralatifah/" target="_blank" class="hover:text-white transition-colors">
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+                <a href="mailto:dhytamutiaa33@gmail.com" class="hover:text-white transition-colors">
+                    <i class="fa-regular fa-envelope text-xl"></i>
+                </a>
+                <a href="https://wa.me/6281394939303" target="_blank" class="hover:text-white transition-colors">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 px-6 border-t border-brand-border/40 relative">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                
+                <!-- Section Title Left -->
+                <div class="md:col-span-4">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-2">Tentang Saya</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Profil Profesional &amp; Dedikasi</h3>
+                </div>
+
+                <!-- Content Right -->
+                <div class="md:col-span-8 space-y-6 text-brand-muted text-base leading-relaxed">
+                    <p class="text-zinc-300 font-medium">
+                        Lulusan S1 Manajemen STIE Yasa Anggana dengan IPK <span class="text-white font-bold">3,48</span>. Memiliki fondasi kuat dalam administrasi, pengelolaan data dan informasi, serta komunikasi organisasi.
+                    </p>
+                    <p>
+                        Memiliki kemampuan berpikir terstruktur, mengorganisasi pekerjaan secara efisien, serta cepat beradaptasi dengan lingkungan kerja maupun tren digital baru. Berpengalaman baik dalam mengelola proyek operasional seperti verifikasi data Pemilu, hingga merancang strategi konten kreatif digital.
+                    </p>
+
+                    <!-- Key Education & Info Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <h4 class="text-sm font-semibold text-white mb-1"><i class="fa-solid fa-graduation-cap mr-2 text-zinc-400"></i>Pendidikan</h4>
+                            <p class="text-xs text-brand-muted">S1 Manajemen | STIE Yasa Anggana</p>
+                            <p class="text-xs text-zinc-500 mt-1">2020 – 2024 (Garut, Jawa Barat)</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border">
+                            <h4 class="text-sm font-semibold text-white mb-1"><i class="fa-solid fa-book-bookmark mr-2 text-zinc-400"></i>Fokus Keahlian</h4>
+                            <p class="text-xs text-brand-muted">MSDM, Operasional, Content Strategy, Digital Marketing &amp; Administrasi</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Projects Section -->
+    <section id="experience" class="py-24 px-6 border-t border-brand-border/40 bg-zinc-950/40">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-2">Pengalaman &amp; Proyek</h2>
+                <h3 class="text-3xl font-bold text-white tracking-tight">Jejak Langkah &amp; Kontribusi</h3>
+            </div>
+
+            <!-- Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Card 1: TikTok Creator -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-800/50">Personal Project</span>
+                            <span class="text-xs text-brand-muted">2025 - Sekarang</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white group-hover:text-zinc-200 mb-1">Content Creator (Independent)</h4>
+                        <p class="text-xs text-zinc-400 mb-4">TikTok Creator</p>
+                        <ul class="text-xs text-brand-muted space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Mengelola akun media sosial dan menyusun strategi konten berdasarkan tren &amp; insight audiens.</li>
+                            <li>Riset ide, penulisan naskah, pengambilan serta penyuntingan video secara mandiri.</li>
+                            <li>Berpartisipasi dalam kampanye brand yang relevan dengan identitas target audiens.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/50 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Social Media Management</span>
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Content Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Amanda Store -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700">Freelance Project</span>
+                            <span class="text-xs text-brand-muted">Desember 2025</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white group-hover:text-zinc-200 mb-1">Content Creator</h4>
+                        <p class="text-xs text-zinc-400 mb-4">Amanda Store</p>
+                        <ul class="text-xs text-brand-muted space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Menyusun ide, konsep, dan content writing sesuai kebutuhan serta target audiens.</li>
+                            <li>Pengambilan video, berperan sebagai talent, dan menyunting video kreatif media sosial.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/50 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Content Writing</span>
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Video Editing</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: KPU Kab. Garut -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-zinc-800 text-zinc-300 border border-zinc-700">Freelance Project</span>
+                            <span class="text-xs text-brand-muted">Jan – Feb 2024</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white group-hover:text-zinc-200 mb-1">Staf Operasional Pemilu</h4>
+                        <p class="text-xs text-zinc-400 mb-4">KPU Kab. Garut</p>
+                        <ul class="text-xs text-brand-muted space-y-2 list-disc list-inside leading-relaxed">
+                            <li>Verifikasi identitas pemilih &amp; validasi data berdasarkan daftar pemilih resmi.</li>
+                            <li>Pelaksanaan pemungutan &amp; penghitungan suara sesuai prosedur administrasi ketat.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/50 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Data Validation</span>
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Administrasi Operasional</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Organisasi -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 rounded-full text-[11px] font-semibold bg-amber-950/80 text-amber-400 border border-amber-800/50">Pengalaman Organisasi</span>
+                            <span class="text-xs text-brand-muted">2020 - 2025</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white group-hover:text-zinc-200 mb-1">Kepemimpinan &amp; Event Management</h4>
+                        <p class="text-xs text-zinc-400 mb-4">BEM STIE YA, PHBI &amp; Karang Taruna</p>
+                        <ul class="text-xs text-brand-muted space-y-2 list-disc list-inside leading-relaxed">
+                            <li><strong>Staf Kemenlu BEM (2021-2022):</strong> Hubungan strategis &amp; kemitraan eksternal.</li>
+                            <li><strong>Event Coordinator PHBI (2020-2024):</strong> Mengoordinasikan acara keagamaan &amp; seni publik.</li>
+                            <li><strong>Karang Taruna Tunas Karya (2025):</strong> Divisi Pengembangan Spiritual &amp; Mental.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-border/50 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Public Relations</span>
+                        <span class="px-2 py-1 rounded bg-zinc-900 text-[10px] text-zinc-400 border border-brand-border">Event Coordination</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- My Skills Section -->
+    <section id="skills" class="py-24 px-6 border-t border-brand-border/40">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="mb-16">
+                <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-2">Keahlian &amp; Kompetensi</h2>
+                <h3 class="text-3xl font-bold text-white tracking-tight">Hard &amp; Soft Skills</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <!-- Hard Skills -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-code text-zinc-300"></i> Hard Skills
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Digital Marketing</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Social Media Marketing</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Content Planning &amp; Strategy</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Social Media Management</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Market &amp; Competitor Research</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Marketing Campaign</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Customer &amp; Market Analysis</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Microsoft Office</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Google Workspace</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Canva</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="space-y-4">
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+                        <i class="fa-solid fa-brain text-zinc-300"></i> Soft Skills
+                    </h4>
+                    <div class="flex flex-wrap gap-2.5">
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Komunikasi &amp; Public Speaking</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Creative Thinking</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Analytical Thinking</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Time Management</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Teamwork &amp; Collaboration</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Problem Solving</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Adaptasi Tren Digital</span>
+                        <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-border text-xs text-zinc-200 hover:border-zinc-500 transition-colors">Target-Oriented</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Languages Skill Footer -->
+            <div class="mt-12 p-6 rounded-2xl bg-brand-card border border-brand-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                    <h5 class="text-sm font-semibold text-white">Penguasaan Bahasa</h5>
+                    <p class="text-xs text-brand-muted mt-1">Kemampuan komunikasi lisan &amp; tulisan</p>
+                </div>
+                <div class="flex items-center space-x-4 text-xs font-medium">
+                    <span class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-brand-border text-zinc-300">Bahasa Indonesia (Native)</span>
+                    <span class="px-3 py-1.5 rounded-lg bg-zinc-900 border border-brand-border text-zinc-300">English (Intermediate)</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 border-t border-brand-border/40 relative">
+        <div class="max-w-4xl mx-auto text-center">
+            
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-2">Hubungi Saya</h2>
+            <h3 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-6">Mari Bekerja Sama &amp; Berkolaborasi</h3>
+            <p class="text-brand-muted text-sm sm:text-base max-w-xl mx-auto mb-12">
+                Saya selalu terbuka untuk peluang karir, proyek freelance, maupun kolaborasi strategis baru. Jangan ragu untuk menghubungi saya!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+                
+                <!-- Email Card -->
+                <a href="mailto:dhytamutiaa33@gmail.com" class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 text-center group">
+                    <div class="w-12 h-12 rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-regular fa-envelope text-white"></i>
+                    </div>
+                    <h4 class="text-sm font-semibold text-white mb-1">Email</h4>
+                    <p class="text-xs text-brand-muted break-all">dhytamutiaa33@gmail.com</p>
+                </a>
+
+                <!-- Phone / Whatsapp Card -->
+                <a href="https://wa.me/6281394939303" target="_blank" class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 text-center group">
+                    <div class="w-12 h-12 rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-whatsapp text-white"></i>
+                    </div>
+                    <h4 class="text-sm font-semibold text-white mb-1">Telepon / WhatsApp</h4>
+                    <p class="text-xs text-brand-muted">+62 813-9493-9303</p>
+                </a>
+
+                <!-- LinkedIn Card -->
+                <a href="https://linkedin.com/in/dhytamutiaralatifah/" target="_blank" class="p-6 rounded-2xl bg-brand-card border border-brand-border hover:border-zinc-500 transition-all duration-300 text-center group">
+                    <div class="w-12 h-12 rounded-full bg-zinc-900 border border-brand-border flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-linkedin-in text-white"></i>
+                    </div>
+                    <h4 class="text-sm font-semibold text-white mb-1">LinkedIn</h4>
+                    <p class="text-xs text-brand-muted">dhytamutiaralatifah</p>
+                </a>
+
+            </div>
+
+            <!-- Location Note -->
+            <p class="text-xs text-zinc-500">
+                <i class="fa-solid fa-location-dot mr-1"></i> Berdomisili di Garut, Jawa Barat (Terbuka untuk Remote / On-site)
+            </p>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 border-t border-brand-border/40 text-center text-xs text-zinc-500">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Dhyta Mutiara Latifah. All rights reserved.</p>
+            <p class="text-zinc-600">Designed with Minimalist Aesthetic &amp; Clean Code.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
